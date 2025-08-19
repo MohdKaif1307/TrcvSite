@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import logoImage from "@assets/TRCV full_1755598133347.png";
 
 interface LogoProps {
   size?: "sm" | "md" | "lg";
@@ -8,9 +9,9 @@ interface LogoProps {
 
 export function Logo({ size = "md", showText = true, className = "" }: LogoProps) {
   const sizeClasses = {
-    sm: "w-8 h-8",
-    md: "w-12 h-12",
-    lg: "w-16 h-16",
+    sm: "h-8",
+    md: "h-12",
+    lg: "h-16",
   };
 
   const textSizes = {
@@ -27,10 +28,12 @@ export function Logo({ size = "md", showText = true, className = "" }: LogoProps
 
   return (
     <Link href="/" data-testid="logo-link">
-      <div className={`flex items-center space-x-2 cursor-pointer ${className}`}>
-        <div className={`${sizeClasses[size]} bg-gradient-trcv rounded-lg flex items-center justify-center flex-shrink-0`}>
-          <span className="text-white font-bold text-xl">T</span>
-        </div>
+      <div className={`flex items-center space-x-3 cursor-pointer ${className}`}>
+        <img 
+          src={logoImage} 
+          alt="TRCV - The Red Carpet Ventures Logo" 
+          className={`${sizeClasses[size]} w-auto object-contain`}
+        />
         {showText && (
           <div>
             <div className={`${textSizes[size]} font-bold text-gradient`}>TRCV</div>

@@ -21,6 +21,7 @@ export function Header() {
     { name: "Portfolio", href: "/portfolio" },
     { name: "Blog", href: "/blog" },
     { name: "Testimonials", href: "/testimonials" },
+    { name: "FAQ", href: "/faq" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -123,15 +124,7 @@ export function Header() {
                 </span>
               </Link>
             ))}
-            <Link href="/faq">
-              <span
-                className="block px-3 py-2 text-gray-700 hover:text-trcv-orange font-medium cursor-pointer"
-                onClick={() => setIsMobileMenuOpen(false)}
-                data-testid="mobile-nav-faq"
-              >
-                FAQ
-              </span>
-            </Link>
+
             <Link href="/privacy">
               <span
                 className="block px-3 py-2 text-gray-700 hover:text-trcv-orange font-medium cursor-pointer"

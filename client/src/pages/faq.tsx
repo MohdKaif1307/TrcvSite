@@ -15,13 +15,13 @@ export default function FAQ() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-light py-20">
+      <section className="bg-gradient-hero py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Frequently Asked Questions
             </h1>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+            <p className="text-xl text-white/90 max-w-4xl mx-auto">
               Everything you need to know about TRCV's corporate event planning services in India. Find answers to common questions about our services, pricing, and process.
             </p>
           </div>
@@ -90,8 +90,8 @@ export default function FAQ() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="bg-white p-6 text-center hover:shadow-lg transition-shadow duration-300">
-              <div className="w-16 h-16 bg-gradient-to-br from-trcv-orange to-trcv-pink rounded-full flex items-center justify-center mx-auto mb-4">
+            <Card className="bg-white p-6 text-center hover:shadow-xl hover-scale transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-warm rounded-full flex items-center justify-center mx-auto mb-4 hover-glow">
                 <span className="text-white font-bold text-xl">?</span>
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Service Specific Questions</h3>
@@ -103,8 +103,8 @@ export default function FAQ() {
               </Link>
             </Card>
 
-            <Card className="bg-white p-6 text-center hover:shadow-lg transition-shadow duration-300">
-              <div className="w-16 h-16 bg-gradient-to-br from-trcv-purple to-trcv-blue rounded-full flex items-center justify-center mx-auto mb-4">
+            <Card className="bg-white p-6 text-center hover:shadow-xl hover-scale transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-cool rounded-full flex items-center justify-center mx-auto mb-4 hover-glow">
                 <span className="text-white font-bold text-xl">📊</span>
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Pricing & Packages</h3>
@@ -116,8 +116,8 @@ export default function FAQ() {
               </Link>
             </Card>
 
-            <Card className="bg-white p-6 text-center hover:shadow-lg transition-shadow duration-300">
-              <div className="w-16 h-16 bg-gradient-to-br from-trcv-emerald to-trcv-blue rounded-full flex items-center justify-center mx-auto mb-4">
+            <Card className="bg-white p-6 text-center hover:shadow-xl hover-scale transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-vibrant rounded-full flex items-center justify-center mx-auto mb-4 hover-glow">
                 <span className="text-white font-bold text-xl">📖</span>
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Event Planning Tips</h3>

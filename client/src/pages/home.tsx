@@ -24,11 +24,11 @@ export default function Home() {
       <Stats />
 
       {/* About TRCV */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">About TRCV</h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+            <h2 className="text-4xl font-bold text-gradient-hero mb-4">About TRCV</h2>
+            <p className="text-xl text-gray-700 max-w-4xl mx-auto">
               TRCV is headquartered in Gurugram and serves clients across India. With years of expertise in corporate event planning, we've worked with companies of all sizes to create events that leave a mark. Our unique blend of strategy, creativity, and execution ensures every event tells a story that reflects your brand.
             </p>
           </div>
@@ -83,25 +83,25 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="text-center p-6 rounded-xl bg-gradient-to-br from-orange-50 to-pink-50 hover:shadow-lg transition-shadow duration-300">
-              <Building className="w-12 h-12 text-trcv-orange mx-auto mb-4" />
-              <h3 className="font-semibold text-gray-900 mb-2">Corporate Events</h3>
-              <p className="text-sm text-gray-600">Annual meets, product launches, and celebrations</p>
+            <Card className="text-center p-6 rounded-xl bg-gradient-warm hover:shadow-xl hover-scale transition-all duration-300 group">
+              <Building className="w-12 h-12 text-white mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
+              <h3 className="font-semibold text-white mb-2">Corporate Events</h3>
+              <p className="text-sm text-white/90">Annual meets, product launches, and celebrations</p>
             </Card>
-            <Card className="text-center p-6 rounded-xl bg-gradient-to-br from-purple-50 to-blue-50 hover:shadow-lg transition-shadow duration-300">
-              <GraduationCap className="w-12 h-12 text-trcv-purple mx-auto mb-4" />
-              <h3 className="font-semibold text-gray-900 mb-2">Trainings & Workshops</h3>
-              <p className="text-sm text-gray-600">Skill-building and leadership development sessions</p>
+            <Card className="text-center p-6 rounded-xl bg-gradient-cool hover:shadow-xl hover-scale transition-all duration-300 group">
+              <GraduationCap className="w-12 h-12 text-white mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
+              <h3 className="font-semibold text-white mb-2">Trainings & Workshops</h3>
+              <p className="text-sm text-white/90">Skill-building and leadership development sessions</p>
             </Card>
-            <Card className="text-center p-6 rounded-xl bg-gradient-to-br from-emerald-50 to-blue-50 hover:shadow-lg transition-shadow duration-300">
-              <Mic className="w-12 h-12 text-trcv-emerald mx-auto mb-4" />
-              <h3 className="font-semibold text-gray-900 mb-2">AV Production</h3>
-              <p className="text-sm text-gray-600">Sound, light, and stage setups for impactful experiences</p>
+            <Card className="text-center p-6 rounded-xl bg-gradient-vibrant hover:shadow-xl hover-scale transition-all duration-300 group">
+              <Mic className="w-12 h-12 text-white mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
+              <h3 className="font-semibold text-white mb-2">AV Production</h3>
+              <p className="text-sm text-white/90">Sound, light, and stage setups for impactful experiences</p>
             </Card>
-            <Card className="text-center p-6 rounded-xl bg-gradient-to-br from-amber-50 to-orange-50 hover:shadow-lg transition-shadow duration-300">
-              <Users className="w-12 h-12 text-trcv-amber mx-auto mb-4" />
-              <h3 className="font-semibold text-gray-900 mb-2">Exhibitions & Conferences</h3>
-              <p className="text-sm text-gray-600">Trade shows, seminars, and business summits</p>
+            <Card className="text-center p-6 rounded-xl bg-gradient-trcv hover:shadow-xl hover-scale transition-all duration-300 group">
+              <Users className="w-12 h-12 text-white mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
+              <h3 className="font-semibold text-white mb-2">Exhibitions & Conferences</h3>
+              <p className="text-sm text-white/90">Trade shows, seminars, and business summits</p>
             </Card>
           </div>
 
@@ -320,26 +320,29 @@ export default function Home() {
       </section>
 
       {/* Why Choose TRCV */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="bg-white p-8 shadow-xl">
-            <CardHeader className="text-center">
-              <CardTitle className="text-2xl font-bold text-gray-900 mb-8">Why Businesses Across India Choose TRCV</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {whyChooseItems.map((item, index) => (
-                  <div key={index} className="text-center">
-                    <div className="w-16 h-16 bg-gradient-trcv rounded-full flex items-center justify-center mx-auto mb-4">
-                      <item.icon className="w-8 h-8 text-white" />
-                    </div>
-                    <h4 className="font-semibold text-gray-900 mb-2">{item.title}</h4>
-                    <p className="text-gray-600 text-sm">{item.description}</p>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gradient-hero mb-4">Why Businesses Across India Choose TRCV</h2>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+              Discover what makes TRCV the preferred choice for corporate event planning across India.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {whyChooseItems.map((item, index) => {
+              const gradients = ['bg-gradient-warm', 'bg-gradient-cool', 'bg-gradient-vibrant', 'bg-gradient-trcv'];
+              return (
+                <Card key={index} className="bg-white p-6 text-center hover:shadow-xl hover-scale transition-all duration-300 group">
+                  <div className={`w-16 h-16 ${gradients[index]} rounded-full flex items-center justify-center mx-auto mb-4 hover-glow group-hover:scale-110 transition-transform duration-300`}>
+                    <item.icon className="w-8 h-8 text-white" />
                   </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+                  <h4 className="font-semibold text-gray-900 mb-2">{item.title}</h4>
+                  <p className="text-gray-600 text-sm">{item.description}</p>
+                </Card>
+              );
+            })}
+          </div>
         </div>
       </section>
 
@@ -351,7 +354,7 @@ export default function Home() {
         primaryHref="/contact"
         secondaryText="Explore Our Services"
         secondaryHref="/services"
-        className="py-20 bg-gradient-light"
+        className="py-20 bg-gradient-hero"
       />
     </div>
   );
