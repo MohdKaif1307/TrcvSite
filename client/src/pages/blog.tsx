@@ -1,12 +1,21 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
 import { BLOG_POSTS } from "@/lib/constants";
 import { Calendar, ArrowRight } from "lucide-react";
 
 export default function Blog() {
   const categories = ["Corporate Event Trends", "Event Planning Tips", "Corporate Venues in India", "Technology in Events"];
+  const { data } = useQuery<{ id: string; title: string; slug: string; excerpt: string; coverImage?: string; category?: string; createdAt?: string; }[]>({
+    queryKey: ["blog-posts"],
+    queryFn: async () => {
+      const res = await fetch("/api/blog");
+      if (!res.ok) return [];
+      return res.json();
+    },
+  });
 
   return (
     <div>
@@ -59,34 +68,32 @@ export default function Blog() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {BLOG_POSTS.map((post) => (
+            {(data && data.length > 0 ? data : BLOG_POSTS).map((post: any) => (
               <Card 
                 key={post.id} 
                 className="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
               >
                 <img 
-                  src={post.image} 
+                  src={post.image || post.coverImage || "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=400&fit=crop"} 
                   alt={post.title}
                   className="w-full h-48 object-cover"
                   data-testid={`img-blog-${post.id}`}
                 />
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between mb-3">
-                    <Badge 
-                      className={`bg-${post.categoryColor} bg-opacity-10 text-${post.categoryColor} px-3 py-1 text-xs font-medium`}
-                    >
-                      {post.category}
+                    <Badge className="px-3 py-1 text-xs font-medium">
+                      {post.category || "General"}
                     </Badge>
                     <div className="flex items-center text-gray-500 text-sm">
                       <Calendar className="w-4 h-4 mr-1" />
-                      {post.date}
+                      {post.date || new Date(post.createdAt || Date.now()).toLocaleDateString()}
                     </div>
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{post.title}</h3>
                   <p className="text-gray-600 mb-4">{post.excerpt}</p>
                   <Button 
                     variant="link" 
-                    className={`p-0 text-${post.categoryColor} hover:text-trcv-orange font-semibold group`}
+                    className="p-0 hover:text-trcv-orange font-semibold group"
                     data-testid={`button-read-more-${post.id}`}
                   >
                     Read More 

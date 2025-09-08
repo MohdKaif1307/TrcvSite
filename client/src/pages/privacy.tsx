@@ -139,8 +139,8 @@ export default function Privacy() {
                 </p>
                 <div className="space-y-2 text-gray-700">
                   <p><strong>Email:</strong> support@trcv.in</p>
-                  <p><strong>Phone:</strong> +91-XXXXXXXXXX</p>
-                  <p><strong>Address:</strong> 606, Eros City Square, Gurugram, Haryana, India</p>
+                  <p><strong>Phone:</strong> +91-9560200314</p>
+                  <p><strong>Address:</strong> 614, Eros City Square, Gurugram, Haryana, India</p>
                 </div>
               </div>
             </div>

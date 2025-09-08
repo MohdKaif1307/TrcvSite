@@ -34,12 +34,12 @@ export function Logo({ size = "md", showText = true, className = "" }: LogoProps
           alt="TRCV - The Red Carpet Ventures Logo" 
           className={`${sizeClasses[size]} w-auto object-contain`}
         />
-        {showText && (
+        {/* {showText && (
           <div>
             <div className={`${textSizes[size]} font-bold text-gradient`}>TRCV</div>
             <div className={`${subTextSizes[size]} text-gray-600`}>The Red Carpet Ventures</div>
           </div>
-        )}
+        )} */}
       </div>
     </Link>
   );

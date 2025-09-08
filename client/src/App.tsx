@@ -11,6 +11,7 @@ import About from "@/pages/about";
 import Services from "@/pages/services";
 import Portfolio from "@/pages/portfolio";
 import Blog from "@/pages/blog";
+import BlogNew from "@/pages/blog-new";
 import Testimonials from "@/pages/testimonials";
 import Contact from "@/pages/contact";
 import FAQ from "@/pages/faq";
@@ -27,6 +28,7 @@ function Router() {
         <Route path="/services" component={Services} />
         <Route path="/portfolio" component={Portfolio} />
         <Route path="/blog" component={Blog} />
+        <Route path="/blog/new" component={BlogNew} />
         <Route path="/testimonials" component={Testimonials} />
         <Route path="/contact" component={Contact} />
         <Route path="/faq" component={FAQ} />

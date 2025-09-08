@@ -7,8 +7,8 @@ export const SITE_CONFIG = {
   description: "TRCV is India's trusted corporate event planning company. We deliver seamless conferences, exhibitions, trainings, and AV production.",
   url: "https://trcv.in",
   email: "support@trcv.in",
-  phone: "+91-XXXXXXXXXX",
-  address: "606, Eros City Square, Gurugram, Haryana, India",
+  phone: "+91-9560200314",
+  address: "614, Eros City Square, Gurugram, Haryana, India",
   
   stats: {
     events: "500+",

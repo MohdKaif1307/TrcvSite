@@ -29,3 +29,43 @@ export const insertContactSubmissionSchema = createInsertSchema(contactSubmissio
 
 export type InsertContactSubmission = z.infer<typeof insertContactSubmissionSchema>;
 export type ContactSubmission = typeof contactSubmissions.$inferSelect;
+
+// Blog schema (logical only; stored in memory/serverless for now)
+export const blogPosts = pgTable("blog_posts", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  title: text("title").notNull(),
+  slug: text("slug").notNull(),
+  excerpt: text("excerpt").notNull(),
+  content: text("content").notNull(),
+  coverImage: text("cover_image"),
+  category: text("category"),
+  tags: text("tags"), // comma-separated for simplicity
+  metaTitle: text("meta_title"),
+  metaDescription: text("meta_description"),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});
+
+export const insertBlogPostSchema = createInsertSchema(blogPosts).pick({
+  title: true,
+  slug: true,
+  excerpt: true,
+  content: true,
+  coverImage: true,
+  category: true,
+  tags: true,
+  metaTitle: true,
+  metaDescription: true,
+}).extend({
+  title: z.string().min(5, "Title is too short"),
+  slug: z
+    .string()
+    .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, "Use lowercase letters, numbers and dashes"),
+  excerpt: z.string().min(30, "Excerpt should be at least 30 characters"),
+  content: z.string().min(100, "Content should be at least 100 characters"),
+  coverImage: z.string().url("Cover image must be a valid URL").optional().or(z.literal("")).transform(v => v || undefined),
+  tags: z.string().optional(),
+});
+
+export type InsertBlogPost = z.infer<typeof insertBlogPostSchema>;
+export type BlogPost = typeof blogPosts.$inferSelect;
